@@ -9,8 +9,8 @@ require 'date'
 
 # Configure Crate to log to STDOUT at the 'info' level
 Logging::Logger['Crate'].level = :info
-Logging::Logger['Crate'].add_appenders( Logging::Appender.stdout )
-Logging::Appender.stdout.layout = Logging::Layouts::Pattern.new( 
+Logging::Logger['Crate'].add_appenders( Logging::Appenders.stdout )
+Logging::Appenders.stdout.layout = Logging::Layouts::Pattern.new( 
     :pattern      => "[%d] %5l: %m\n",   # [date] LEVEL: message
     :date_pattern => "%H:%M:%S"          # date == HH::MM::SS
 )
